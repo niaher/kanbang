@@ -1,0 +1,20 @@
+﻿@model IList<Link>
+
+<ol class="breadcrumb layout">
+	<li><a href="/"><span class="fa fa-home"></span></a></li>
+	<li>@Html.ActionLink("App!", MVC.Home.Index())</li>
+	@foreach (var link in this.Model)
+	{
+		<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="@link.Url" itemprop="url">
+				<span itemprop="title">@Html.Raw(link.Anchor)</span>
+			</a>
+		</li>
+	}
+
+	<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" ng-repeat="link in breadcrumbs" class="ng-cloak">
+		<a ng-href="{{link.url}}" itemprop="url">
+			<span itemprop="title">{{link.anchor}}</span>
+		</a>
+	</li>
+</ol>

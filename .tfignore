@@ -32,7 +32,7 @@
 [Rr]elease
 [Tt]umbs.db
 *.min.css
-*.css.map
+Kanbang\Kanbang.Web\Styles\Main.css.map
 
 # ReSharper
 _ReSharper.*/

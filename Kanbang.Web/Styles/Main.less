@@ -1,0 +1,258 @@
+﻿@import "Bootstrap/less/variables.less";
+@import "Bootstrap/less/mixins.less";
+
+/***************************************************************************
+Mixins
+***************************************************************************/
+.arrow-down(@size, @color) {
+	width: 0; 
+	height: 0; 
+	border-left:@size solid transparent;
+	border-right:@size solid transparent;
+	border-bottom:none;
+	border-top:@size solid @color;
+}
+
+.width(@count, @step) when (@count > 0) {
+	.width(@count - 1, @step);
+	@width: @count * @step;
+	.width-@{width} {width:(unit(@width, px))}
+}
+
+.text-shadow(@color, @x, @y) {
+	filter:DropShadow(Color=@color, OffX=@x, OffY=@y);
+	text-shadow:unit(-@x, px) 0 @color, 0 unit(@y, px) @color, unit(@x, px) 0 @color, 0 unit(-@y, px) @color;
+}
+
+.text-shadow-none() {
+	filter:none;
+	text-shadow:none;
+}
+
+.background-gradient(@start, @end) {
+	background: @start;
+	background: -moz-linear-gradient(@start, @end);
+	background: -webkit-linear-gradient(@start, @end);
+	background: -o-linear-gradient(@start, @end);
+	background: -ms-linear-gradient(@start, @end);/*For IE10*/
+	background: linear-gradient(@start, @end);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{end}', GradientType=0); /*For IE7-8-9*/
+	height: 1%;/*For IE7*/
+}
+
+/***************************************************************************
+Layout & Master Styling
+***************************************************************************/
+body {padding-top:51px}
+
+header .login {line-height:49px; text-align:right; font-size:0.85em; white-space:nowrap; text-overflow:ellipsis}
+.breadcrumb.layout {margin-bottom:0}
+
+.navbar-brand > img.logo {
+	max-height: 22px;
+	border-radius:0;
+	margin: 0px 0 0 0px;
+	background: transparent;
+	border-color: transparent;
+}
+
+footer {
+	text-align:center; padding:20px 0;
+	a {color:#71A1CC; font-size:small}
+	a:hover {color:lighten(#71A1CC,10%)}
+}
+
+.btn-left-menu {
+	margin-right:35px;
+}
+
+.navbar-brand {
+	padding-left:135px;
+	font-size:1em;
+	position:relative;
+	display:block;
+	margin:0 auto;
+
+	>img {
+		height: 24px;
+		line-height: 33px;
+		display: inline-block;
+		position: absolute;
+		top: 12px;
+		left:0;
+		border-radius: 11px;
+		border: 1px solid;
+		background: #fff;
+		opacity:0.8;
+	}
+
+	@media(min-width:@screen-md-min) {
+		font-size:1.2em;
+	}
+
+	&:hover>img {opacity:1}
+}
+
+@side-menu-md-width:20%;
+@side-menu-lg-width:15%;
+@side-menu-header-bg: @breadcrumb-bg;
+@side-menu-bg: lighten(@side-menu-header-bg, 900%);
+@side-menu-link-color: darken(@side-menu-header-bg, 45%);
+@side-menu-top:51px;
+.side-menu {
+	position: fixed;
+	height: 100%;
+	width:250px;
+	max-width:80%;
+	z-index: 1000;
+	top: 0;
+	display:block;
+	padding:@side-menu-top 0 0 0;
+
+	
+	>ul {
+		background: @side-menu-bg;
+		border:solid darken(@side-menu-header-bg, 5%);
+		overflow-y:auto;
+		height:100%;
+	}
+	
+	&.right {
+		right:0;
+
+		>ul {border-width:0 0 0 1px}
+	}
+	&.left {
+		left:0; 
+
+		>ul {border-width:0 1px 0 0}
+	}
+
+	&.closed {display:none}
+
+	.side-menu-header {
+		padding:6px 15px;
+		margin:0;
+		font-size:0.9em;
+		font-weight:bold;
+		color:@navbar-inverse-bg; //darken(@side-menu-header-bg, 65%);
+		background:@side-menu-header-bg;
+		border:1px solid darken(@side-menu-header-bg, 5%);
+		border-width:1px 0 0;
+	}
+	
+	a {
+		cursor:pointer;
+		color:@side-menu-link-color;
+		text-decoration:none;
+		padding:6px 15px;
+		display:block;
+		outline:none;
+		font-size:0.9em;
+	}
+	
+	ul {margin:0; list-style-type:none; padding:0}
+	ul ul li {padding:0 0 0 15px; list-style-type:square; list-style-position:inside}
+	li {
+		margin:0; 
+		border-top:1px solid darken(@side-menu-bg, 5%);
+		list-style-type:none;
+
+		a:hover {color:darken(@side-menu-link-color, 50%); background-color:lighten(@side-menu-header-bg, 2%); text-decoration:underline}
+		&:last-child {border-bottom:none}
+	}
+	
+	.side-menu-submenu{
+		position:relative;
+
+		>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;border-radius:0 6px 6px 6px;}
+		&:hover>.dropdown-menu{display:block;}
+		>a:after{
+			display:block;
+			content:" ";
+			float:right;			
+			margin-top:5px;
+			margin-right:-10px;
+			.arrow-down(5px, darken(@side-menu-header-bg, 10%));
+		}
+
+		.pull-left{float:none;}
+		.pull-left>.dropdown-menu{left:-100%;margin-left:10px;border-radius:6px 0 6px 6px;}
+	}
+	
+	@media(min-width:@screen-md-min) {
+		display:block;
+		position:static;
+		float:left;
+		width:@side-menu-md-width;
+		padding:0;
+
+		&.closed {display:block}
+		&.right>ul {border-width:0 0 1px 1px}
+		&.left>ul {border-width:0 1px 1px 0}
+		>ul{margin-top:1px}
+	}
+
+	@media(min-width:@screen-lg-min) {
+		width:@side-menu-lg-width;
+	}
+}
+
+#main-content {
+	padding:0 15px;
+
+	@media(min-width:@screen-md-min) {
+		float:left;
+		padding:0 15px 0 30px;
+		width:100%-@side-menu-md-width;
+	}
+	@media(min-width:@screen-lg-min) {
+		width:100%-@side-menu-lg-width;
+	}
+}
+
+#oldbrowser {margin:0 0 50px 0}
+
+/***************************************************************************
+Nested menu
+***************************************************************************/
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}
+.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+/***************************************************************************
+Utilities
+***************************************************************************/
+.width(10, 20);
+
+@vertical-margin:20px;
+.margin-bottom {margin-bottom:@vertical-margin}
+.margin-top {margin-top:@vertical-margin}
+.no-vertical-margins {margin:0}
+.no-top-margin {margin-top:0 !important}
+
+.clickable {cursor:pointer}
+
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}
+ng\:form{display:block;}
+
+.list-separator {list-style:none; margin:18px 0}
+
+/***************************************************************************
+Tweaking Bootstrap
+***************************************************************************/
+.navbar-inverse {color:@navbar-inverse-color}
+
+/*--------------------------------------------------------------------------
+Reusable control
+--------------------------------------------------------------------------*/
+.my-control {}
+
+/*==========================================================================
+Page
+==========================================================================*/
+.p1 {}
