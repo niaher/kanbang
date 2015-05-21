@@ -16,7 +16,7 @@
 		[ClaimsPrincipalPermission(SecurityAction.Demand, Operation = "View", Resource = "Secret")]
 		public string GetSecret(int? id)
 		{
-			return "secret-" + id;
+			return "secret-" + id; 
 		}
 	}
 }
