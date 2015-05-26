@@ -2,14 +2,13 @@
 {
 	using System.Web.Mvc;
 
-	public abstract class MyWebViewPage<TModel> : WebViewPage
+	public abstract class MyWebViewPage<TModel> : WebViewPage<TModel>
 	{
-		private class ViewBagFactory
+		protected MyWebViewPage()
 		{
-			public MyViewBag Create(dynamic viewBag)
-			{
-				return new MyViewBag(viewBag);
-			}
+			this.StrongViewBag = new MyViewBag(this.ViewBag);
 		}
+
+		public MyViewBag StrongViewBag { get; set; }
 	}
 }

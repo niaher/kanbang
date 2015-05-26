@@ -1,7 +1,6 @@
 ﻿namespace Kanbang.Web.Logic.Security
 {
 	using System.Collections.Generic;
-	using System.Diagnostics;
 	using System.Security.Claims;
 	using System.Security.Principal;
 	using Coderful.Web.Identity;
@@ -36,7 +35,12 @@
 
 		private static User GetUser(IPrincipal userPrincipal)
 		{
-			return new User();
+			return new User
+			{
+				Id = 1,
+				IsAdmin = true,
+				Name = "John Smith"
+			};
 		}
 	}
 }

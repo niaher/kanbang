@@ -1,6 +1,7 @@
 ﻿namespace Kanbang.Web.Logic.Security
 {
 	using System.Security.Claims;
+	using ClaimTypes = System.IdentityModel.Claims.ClaimTypes;
 
 	public static class AppUser
 	{
@@ -8,7 +9,7 @@
 		{
 			get
 			{
-				return ClaimsPrincipal.Current.FindFirst(System.IdentityModel.Claims.ClaimTypes.GivenName).Value;
+				return ClaimsPrincipal.Current.FindFirst(ClaimTypes.GivenName).Value;
 			}
 		}
 
@@ -16,7 +17,7 @@
 		{
 			get
 			{
-				return int.Parse(ClaimsPrincipal.Current.FindFirst("UserManagementId").Value);
+				return int.Parse(ClaimsPrincipal.Current.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
 			}
 		}
 	}
