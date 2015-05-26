@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Styles = Links.Styles
+@{
 	StrongViewBag.LayoutDetails = new LayoutDetails
 	{
 		Title = "Home",
@@ -56,10 +57,10 @@ IE9 and higher.
 <ul>
 	<li>
 		You can adjust header's background color by setting the variable <code>@@navbar-inverse-bg</code> located inside
-		<em>~@Links.Styles.Bootstrap.less.variables_less</em>.
+		<em>~@Styles.Bootstrap.less.variables_less</em>.
 	</li>
 	<li>
-		You can create a custom favicon from existing image template located at <em>~@Links.Styles.Images.favicon_pxd</em>.
+		You can create a custom favicon from existing image template located at <em>~@Styles.Images.favicon_pxd</em>.
 		This is a Pixlr file, which you can edit with <a href="http://apps.pixlr.com/editor/">Pixlr's online editor</a>.
 	</li>
 </ul>

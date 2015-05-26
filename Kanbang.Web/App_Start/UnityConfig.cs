@@ -1,7 +1,8 @@
 using Kanbang.Web;
+using WebActivatorEx;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityConfig), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(UnityConfig), "Shutdown")]
+[assembly: PreApplicationStartMethod(typeof(UnityConfig), "Start")]
+[assembly: ApplicationShutdownMethod(typeof(UnityConfig), "Shutdown")]
 
 namespace Kanbang.Web
 {
@@ -11,6 +12,7 @@ namespace Kanbang.Web
 	using System.Web.Mvc;
 	using Microsoft.Practices.Unity;
 	using Microsoft.Practices.Unity.Mvc;
+	using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 	using MvcUnityDependencyResolver = Microsoft.Practices.Unity.Mvc.UnityDependencyResolver;
 	using WebApiUnityDependencyResolver = Unity.WebApi.UnityDependencyResolver;
 
@@ -47,7 +49,7 @@ namespace Kanbang.Web
 			DependencyResolver.SetResolver(new MvcUnityDependencyResolver(container));
 			GlobalConfiguration.Configuration.DependencyResolver = new WebApiUnityDependencyResolver(container);
 
-			Microsoft.Web.Infrastructure.DynamicModuleHelper.DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
+			DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));
 		}
 
 		private static void RegisterTypes(IUnityContainer container)

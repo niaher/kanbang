@@ -13,9 +13,9 @@
 			this.DbConnection = new SqlConnection(ConfigurationManager.AppSettings["Kanbang"]);
 		}
 
-		internal DataContext(IDbConnection DbConnection)
+		internal DataContext(IDbConnection dbConnection)
 		{
-			this.DbConnection = DbConnection;
+			this.DbConnection = dbConnection;
 		}
 	}
 }
