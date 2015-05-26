@@ -1,19 +1,21 @@
 ﻿namespace Kanbang.Core.Managers
 {
-	using Kanbang.Core.DataAccess;
+	using System.Configuration;
+	using System.Data;
+	using System.Data.SqlClient;
 
 	public class DataContext
 	{
-		internal readonly KanbangDbContext DbContext;
+		internal readonly IDbConnection DbConnection;
 
 		public DataContext()
 		{
-			this.DbContext = new KanbangDbContext();
+			this.DbConnection = new SqlConnection(ConfigurationManager.AppSettings["Kanbang"]);
 		}
 
-		internal DataContext(KanbangDbContext dbContext)
+		internal DataContext(IDbConnection DbConnection)
 		{
-			this.DbContext = dbContext;
+			this.DbConnection = DbConnection;
 		}
 	}
 }

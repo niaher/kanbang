@@ -2,15 +2,12 @@
 {
 	using System.Net.Http.Headers;
 	using System.Web.Http;
-	using System.Web.Http.OData.Extensions;
 	using Kanbang.Web.Filters;
 
 	public class WebApiConfig
 	{
 		public static void Register(HttpConfiguration config)
 		{
-			config.AddODataQueryFilter();
-
 			config.Routes.MapHttpRoute(
 				name: "ApiById",
 				routeTemplate: "api/{controller}/{id}",

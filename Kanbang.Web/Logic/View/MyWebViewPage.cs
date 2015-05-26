@@ -1,15 +1,10 @@
 ﻿namespace Kanbang.Web.Logic.View
 {
-	using Coderful.Web.Mvc;
+	using System.Web.Mvc;
 
-	public abstract class MyWebViewPage<TModel> : CoderfulWebViewPage<TModel, MyViewBag>
+	public abstract class MyWebViewPage<TModel> : WebViewPage
 	{
-		protected MyWebViewPage()
-			: base(new ViewBagFactory())
-		{
-		}
-
-		private class ViewBagFactory : IViewBagFactory<MyViewBag>
+		private class ViewBagFactory
 		{
 			public MyViewBag Create(dynamic viewBag)
 			{

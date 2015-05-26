@@ -2,7 +2,6 @@
 {
 	using System;
 	using Coderful.Events;
-	using Kanbang.Core.Domain;
 
 	public class EventManager
 	{
@@ -21,7 +20,6 @@
 		public EventManager()
 		{
 			this.eventStreamManager.AddEventStream(new EventStream<BusinessEvent<Exception>>());
-			this.eventStreamManager.AddEventStream(new EventStream<BusinessEvent<User>>());
 		}
 
 		public IDisposable RegisterHandler<T>(IEventHandler<T> handler)

@@ -5,8 +5,7 @@
 	using System.Security.Claims;
 	using System.Security.Principal;
 	using Coderful.Web.Identity;
-	using UNOPS.Common.UserManagement.Domain;
-	using UNOPS.Common.UserManagement.Managers;
+	using Kanbang.Core.Domain;
 
 	public class AppAuthenticator : Authenticator
 	{
@@ -24,9 +23,8 @@
 		{
 			var claims = new List<Claim>
 			{
-				new Claim(ClaimTypes.NameIdentifier, user.Guid.ToString()),
-				new Claim(ClaimTypes.GivenName, user.DisplayName),
-				new Claim("UserManagementId", user.Id.ToString())
+				new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+				new Claim(ClaimTypes.GivenName, user.Name),
 			};
 
 			// TODO: add more claims.
@@ -38,13 +36,7 @@
 
 		private static User GetUser(IPrincipal userPrincipal)
 		{
-			WindowsIdentity windowsIdentity = userPrincipal.Identity as WindowsIdentity ?? WindowsIdentity.GetCurrent();
-
-			Debug.Assert(windowsIdentity != null, "windowsIdentity != null");
-
-			SecurityIdentifier user = windowsIdentity.User;
-
-			return user == null ? null : UserManager.GetBySid(user.Value);
+			return new User();
 		}
 	}
 }

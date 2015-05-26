@@ -1,6 +1,5 @@
 ﻿namespace Kanbang.Core.Events
 {
-	using Kanbang.Core.Domain;
 
 	public class EventType<TEntity>
 	{
@@ -13,14 +12,14 @@
 		public int Code { get; private set; }
 		public string Name { get; private set; }
 
-		public BusinessEvent<TEntity> CreateEvent(TEntity entity, User triggeredByUser)
+		public BusinessEvent<TEntity> CreateEvent(TEntity entity)
 		{
-			return new BusinessEvent<TEntity>(this, triggeredByUser, entity);
+			return new BusinessEvent<TEntity>(this, entity);
 		}
 
-		public BusinessEvent<TEntity> CreateEvent(TEntity entity, User triggeredByUser, string message)
+		public BusinessEvent<TEntity> CreateEvent(TEntity entity, string message)
 		{
-			return new BusinessEvent<TEntity>(this, triggeredByUser, entity, message);
+			return new BusinessEvent<TEntity>(this, entity, message);
 		}
 	}
 }
