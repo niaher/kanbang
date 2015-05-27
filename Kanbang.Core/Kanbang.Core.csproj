@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\Repositories\UserRepository.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Events\BusinessEvent.cs" />
     <Compile Include="Events\EventManager.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Managers\IExecutionContext.cs" />
     <Compile Include="Managers\DataContext.cs" />
+    <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
