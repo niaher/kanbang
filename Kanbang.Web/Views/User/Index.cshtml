@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Kanbang.Core.Domain.User>
+
+@{
+    ViewBag.Title = "Kanbang Team";
+}
+
+<h2>Members</h2>
+@if(Model != null)
+{ 
+    foreach (var user in Model)
+    {
+     <span>@user.Email</span><br/>
+    }
+}

@@ -23,7 +23,7 @@
 			var claims = new List<Claim>
 			{
 				new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-				new Claim(ClaimTypes.GivenName, user.Name),
+				new Claim(ClaimTypes.GivenName, user.Email),
 			};
 
 			// TODO: add more claims.
@@ -38,8 +38,7 @@
 			return new User
 			{
 				Id = 1,
-				IsAdmin = true,
-				Name = "John Smith"
+                Email = "JohnSmith@gmail.com"
 			};
 		}
 	}

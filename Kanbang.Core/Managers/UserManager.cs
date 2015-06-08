@@ -1,15 +1,19 @@
 ﻿namespace Kanbang.Core.Managers
 {
-	using System.Data;
+    using System.Collections.Generic;
+    using System.Data;
 	using Kanbang.Core.DataAccess.Repositories;
+    using Kanbang.Core.Domain;
 
-	public class UserManager
+    public class UserManager
 	{
+        private DataContext kanbanContext;
 		private readonly IDbConnection connection;
-
-		public UserManager(DataContext dataContext)
+        
+		public UserManager()
 		{
-			this.connection = dataContext.DbConnection;
+            this.kanbanContext = new DataContext();
+            this.connection = kanbanContext.DbConnection;
 		}
 
 		public void ChangeNamesOfAllUsers(string name)
@@ -21,5 +25,10 @@
 				this.connection.ChangeUserName(user.Id, name);
 			}
 		}
+
+        public IEnumerable<User> GetAll()
+        {
+            return this.connection.GetUsers();
+        }
 	}
 }

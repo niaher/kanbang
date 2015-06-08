@@ -10,7 +10,7 @@
 
 		public DataContext()
 		{
-			this.DbConnection = new SqlConnection(ConfigurationManager.AppSettings["Kanbang"]);
+            this.DbConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Kanbang"].ConnectionString);
 		}
 
 		internal DataContext(IDbConnection dbConnection)
