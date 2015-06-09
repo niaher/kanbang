@@ -23,7 +23,7 @@ using System.Web.Routing;
 using T4MVC;
 namespace T4MVC
 {
-    public class LayoutController
+    public class UsersController
     {
 
         static readonly ViewsClass s_views = new ViewsClass();
@@ -36,15 +36,9 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string _Layout = "_Layout";
-                public readonly string Breadcrumbs = "Breadcrumbs";
-                public readonly string Footer = "Footer";
-                public readonly string Scripts = "Scripts";
+                public readonly string Index = "Index";
             }
-            public readonly string _Layout = "~/Views/Layout/_Layout.cshtml";
-            public readonly string Breadcrumbs = "~/Views/Layout/Breadcrumbs.cshtml";
-            public readonly string Footer = "~/Views/Layout/Footer.cshtml";
-            public readonly string Scripts = "~/Views/Layout/Scripts.cshtml";
+            public readonly string Index = "~/Views/Users/Index.cshtml";
         }
     }
 

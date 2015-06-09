@@ -6,7 +6,7 @@
 
 	public class DataContext
 	{
-		internal readonly IDbConnection DbConnection;
+		public readonly IDbConnection DbConnection;
 
 		public DataContext()
 		{

@@ -7,13 +7,13 @@
 
     public class UserManager
 	{
-        private DataContext kanbanContext;
+        private readonly DataContext kanbanContext;
 		private readonly IDbConnection connection;
         
 		public UserManager()
 		{
             this.kanbanContext = new DataContext();
-            this.connection = kanbanContext.DbConnection;
+            this.connection = this.kanbanContext.DbConnection;
 		}
 
 		public void ChangeNamesOfAllUsers(string name)

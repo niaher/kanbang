@@ -3,10 +3,10 @@
     using System.Web.Mvc;
     using Kanbang.Core.Managers;
 
-    public class UserController : Controller
+	public partial class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+		public virtual ActionResult Index()
         {
             var model = new UserManager().GetAll();
             return View(model);

@@ -11,8 +11,7 @@
 			config.Routes.MapHttpRoute(
 				name: "ApiById",
 				routeTemplate: "api/{controller}/{id}",
-				defaults: new { id = RouteParameter.Optional },
-				constraints: new { id = @"^[0-9]+$" });
+				defaults: new { id = RouteParameter.Optional });
 
 			config.Routes.MapHttpRoute(
 				name: "ApiByAction",

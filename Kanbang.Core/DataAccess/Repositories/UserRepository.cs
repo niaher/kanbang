@@ -6,16 +6,16 @@
 	using Dapper;
 	using Kanbang.Core.Domain;
 
-	internal static class UserRepository
+	public static class UserRepository
 	{
 		public static void ChangeUserName(this IDbConnection connection, int userId, string name)
 		{
-			connection.Execute("update [User] set Name = @Name where Id = @Id", new { Name = name, Id = userId });
+			connection.Execute("update [User] set Name = @Name where UserId = @Id", new { Name = name, Id = userId });
 		}
 
 		public static User Get(this IDbConnection connection, int userId)
 		{
-			return connection.Query<User>("select * from [User] where Id = @Id", userId).SingleOrDefault();
+			return connection.Query<User>("select * from [User] where UserId = @Id", new { Id = userId }).SingleOrDefault();
 		}
 
 		public static IEnumerable<User> GetUsers(this IDbConnection connection)

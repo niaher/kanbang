@@ -23,101 +23,101 @@ using System.Web.Routing;
 using T4MVC;
 namespace Kanbang.Web.Controllers
 {
-	public partial class ErrorController
-	{
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public ErrorController() { }
+    public partial class ErrorController
+    {
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ErrorController() { }
 
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		protected ErrorController(Dummy d) { }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected ErrorController(Dummy d) { }
 
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		protected RedirectToRouteResult RedirectToAction(ActionResult result)
-		{
-			var callInfo = result.GetT4MVCResult();
-			return RedirectToRoute(callInfo.RouteValueDictionary);
-		}
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(ActionResult result)
+        {
+            var callInfo = result.GetT4MVCResult();
+            return RedirectToRoute(callInfo.RouteValueDictionary);
+        }
 
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
-		{
-			return RedirectToAction(taskResult.Result);
-		}
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
+        {
+            return RedirectToAction(taskResult.Result);
+        }
 
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
-		{
-			var callInfo = result.GetT4MVCResult();
-			return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
-		}
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
+        {
+            var callInfo = result.GetT4MVCResult();
+            return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
+        }
 
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
-		{
-			return RedirectToActionPermanent(taskResult.Result);
-		}
-
-
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public ErrorController Actions { get { return MVC.Error; } }
-		[GeneratedCode("T4MVC", "2.0")]
-		public readonly string Area = "";
-		[GeneratedCode("T4MVC", "2.0")]
-		public readonly string Name = "Error";
-		[GeneratedCode("T4MVC", "2.0")]
-		public const string NameConst = "Error";
-
-		static readonly ActionNamesClass s_actions = new ActionNamesClass();
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public ActionNamesClass ActionNames { get { return s_actions; } }
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public class ActionNamesClass
-		{
-			public readonly string NotFound = "NotFound";
-		}
-
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public class ActionNameConstants
-		{
-			public const string NotFound = "NotFound";
-		}
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
+        {
+            return RedirectToActionPermanent(taskResult.Result);
+        }
 
 
-		static readonly ViewsClass s_views = new ViewsClass();
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public ViewsClass Views { get { return s_views; } }
-		[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-		public class ViewsClass
-		{
-			static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
-			public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
-			public class _ViewNamesClass
-			{
-				public readonly string NotFound = "NotFound";
-				public readonly string Unauthorized = "Unauthorized";
-			}
-			public readonly string NotFound = "~/Views/Error/NotFound.cshtml";
-			public readonly string Unauthorized = "~/Views/Error/Unauthorized.cshtml";
-		}
-	}
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ErrorController Actions { get { return MVC.Error; } }
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Area = "";
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Name = "Error";
+        [GeneratedCode("T4MVC", "2.0")]
+        public const string NameConst = "Error";
 
-	[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-	public partial class T4MVC_ErrorController : Kanbang.Web.Controllers.ErrorController
-	{
-		public T4MVC_ErrorController() : base(Dummy.Instance) { }
+        static readonly ActionNamesClass s_actions = new ActionNamesClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionNamesClass ActionNames { get { return s_actions; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionNamesClass
+        {
+            public readonly string NotFound = "NotFound";
+        }
 
-		[NonAction]
-		partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionNameConstants
+        {
+            public const string NotFound = "NotFound";
+        }
 
-		[NonAction]
-		public override System.Web.Mvc.ActionResult NotFound()
-		{
-			var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound);
-			NotFoundOverride(callInfo);
-			return callInfo;
-		}
 
-	}
+        static readonly ViewsClass s_views = new ViewsClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ViewsClass Views { get { return s_views; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ViewsClass
+        {
+            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+            public class _ViewNamesClass
+            {
+                public readonly string NotFound = "NotFound";
+                public readonly string Unauthorized = "Unauthorized";
+            }
+            public readonly string NotFound = "~/Views/Error/NotFound.cshtml";
+            public readonly string Unauthorized = "~/Views/Error/Unauthorized.cshtml";
+        }
+    }
+
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public partial class T4MVC_ErrorController : Kanbang.Web.Controllers.ErrorController
+    {
+        public T4MVC_ErrorController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void NotFoundOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult NotFound()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NotFound);
+            NotFoundOverride(callInfo);
+            return callInfo;
+        }
+
+    }
 }
 
 #endregion T4MVC
