@@ -64,11 +64,7 @@
 			<div class="side-menu left col-sm-12 col-md-2" ng-class="{'closed':!!navCollapsed}" role="menu">
 				<ul>
 					<li class="side-menu-header">My stuff</li>
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-                    <li><a href="~/User/Index">Kanbang Team</a></li>
-					<li class="side-menu-header">Section</li>
+					<li><a href="#">My boards</a></li>
 					<li class="side-menu-submenu">
 						<a tabindex="-1" ng-click="menu1Show = !menu1Show">More options</a>
 						<ul ng-show="menu1Show">
@@ -84,6 +80,8 @@
 							<li><a href="#">Second level</a></li>
 						</ul>
 					</li>
+					<li class="side-menu-header">Adminstration</li>
+					<li><a href="~/User/Index">Users</a></li>
 					<li class="side-menu-header">Help</li>
 					<li><a href="@this.Url.Content("~/swagger")" target="_blank">Web API docs</a></li>
 				</ul>
