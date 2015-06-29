@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[Kanban]
 (
-	[KanbanId] int identity NOT NULL,
-	[Description] nvarchar(MAX) NULL,
+	[Id] int identity NOT NULL,
 	[Title] nvarchar(250) NOT NULL,
+	[Description] nvarchar(MAX) NULL,	
 	[ProjectId] int NOT NULL,
 	[DateStart] datetime NULL,
 	[DateEnd] datetime NULL,
-	[DateCreated] datetime NOT NULL,
+	[CreatedOn] datetime NOT NULL,
 	[CreatedBy] int null
 )
