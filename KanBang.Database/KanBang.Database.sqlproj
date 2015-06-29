@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>KanBang.Database</Name>
+    <Name>Kanbang.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{e73481e6-7fde-4c7e-8da8-c83153e3c8fe}</ProjectGuid>
@@ -12,7 +12,7 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>KanBang.Database</RootNamespace>
+    <RootNamespace>Kanbang.Database</RootNamespace>
     <AssemblyName>KanBang.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
@@ -23,6 +23,7 @@
     <SqlServerVerification>True</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetDatabase>Kanbang.Database</TargetDatabase>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -76,7 +77,7 @@
     <PostDeploy Include="Scripts\Post-Deployment\UserData.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="KanBang.Database.publish.xml" />
+    <None Include="Kanbang.Database.publish.xml" />
     <Build Include="Schemas\dbo\Tables\Keys\Kanban.pkey.sql" />
   </ItemGroup>
   <ItemGroup>
