@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -21,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -218,6 +220,7 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Home\AboutTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -228,40 +231,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\App\_App.js" />
-    <Content Include="Scripts\Libs\Angular\angular-animate.js" />
-    <Content Include="Scripts\Libs\Angular\angular-route.js" />
-    <Content Include="Scripts\Libs\Angular\angular-sanitize.js" />
-    <Content Include="Scripts\Libs\Angular\angular.js" />
-    <Content Include="Scripts\Libs\Growl\angular-growl.js" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\accordion\accordion-group.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\accordion\accordion.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\alert\alert.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\carousel\carousel.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\carousel\slide.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\datepicker\datepicker.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\datepicker\day.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\datepicker\month.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\datepicker\popup.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\datepicker\year.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\modal\backdrop.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\modal\window.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\pagination\pager.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\pagination\pagination.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\popover\popover.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\progressbar\bar.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\progressbar\progress.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\progressbar\progressbar.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\rating\rating.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\tabs\tab.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\tabs\tabset.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\timepicker\timepicker.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\tooltip\tooltip-html-unsafe-popup.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\tooltip\tooltip-popup.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\typeahead\typeahead-match.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\template\typeahead\typeahead-popup.html" />
-    <Content Include="Scripts\Libs\ui-bootstrap\ui-bootstrap-0.11.0.js" />
-    <Content Include="Scripts\Libs\ui-bootstrap\ui-bootstrap-tpls-0.11.0.js" />
+    <None Include="Scripts\App\_App.ts" />
     <Content Include="Styles\Bootstrap\less\.csscomb.json" />
     <Content Include="Styles\Bootstrap\less\.csslintrc" />
     <Content Include="Styles\Bootstrap\less\alerts.less" />
@@ -361,7 +331,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Layout\Breadcrumbs.cshtml" />
     <Content Include="Views\Layout\Footer.cshtml" />
-    <Content Include="Views\Layout\Scripts.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -406,9 +375,6 @@
     <Compile Include="T4MVC\UserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4MVC\UsersController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -419,12 +385,18 @@
       <Name>Kanbang.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Libs\typings\angular2\angular2.d.ts" />
+    <TypeScriptCompile Include="Scripts\Libs\typings\es6-promise\es6-promise.d.ts" />
+    <TypeScriptCompile Include="Scripts\Libs\typings\rx\rx-lite.d.ts" />
+    <TypeScriptCompile Include="Scripts\Libs\typings\rx\rx.d.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

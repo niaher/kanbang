@@ -74,6 +74,7 @@ namespace Kanbang.Web.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string AboutTemplate = "AboutTemplate";
             public readonly string Admin = "Admin";
         }
 
@@ -81,6 +82,7 @@ namespace Kanbang.Web.Controllers
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string AboutTemplate = "AboutTemplate";
             public const string Admin = "Admin";
         }
 
@@ -95,9 +97,11 @@ namespace Kanbang.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string AboutTemplate = "AboutTemplate";
                 public readonly string Admin = "Admin";
                 public readonly string Index = "Index";
             }
+            public readonly string AboutTemplate = "~/Views/Home/AboutTemplate.cshtml";
             public readonly string Admin = "~/Views/Home/Admin.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
         }
@@ -116,6 +120,17 @@ namespace Kanbang.Web.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AboutTemplateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AboutTemplate()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AboutTemplate);
+            AboutTemplateOverride(callInfo);
             return callInfo;
         }
 

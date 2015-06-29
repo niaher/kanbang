@@ -29,7 +29,6 @@ public static partial class MVC
     public static Kanbang.Web.Controllers.HomeController Home = new Kanbang.Web.Controllers.T4MVC_HomeController();
     public static Kanbang.Web.Controllers.UserController User = new Kanbang.Web.Controllers.T4MVC_UserController();
     public static T4MVC.LayoutController Layout = new T4MVC.LayoutController();
-    public static T4MVC.UsersController Users = new T4MVC.UsersController();
 }
 
 namespace T4MVC
@@ -76,7 +75,7 @@ namespace Links
             private const string URLPATH = "~/Scripts/App";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string _App_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_App.min.js") ? Url("_App.min.js") : Url("_App.js");
+            public static readonly string _App_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_App.min.js") ? Url("_App.min.js") : Url("_App.js");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -85,155 +84,35 @@ namespace Links
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class Angular {
-                private const string URLPATH = "~/Scripts/Libs/Angular";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string angular_animate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-animate.min.js") ? Url("angular-animate.min.js") : Url("angular-animate.js");
-                public static readonly string angular_route_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-route.min.js") ? Url("angular-route.min.js") : Url("angular-route.js");
-                public static readonly string angular_sanitize_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-sanitize.min.js") ? Url("angular-sanitize.min.js") : Url("angular-sanitize.js");
-                public static readonly string angular_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular.min.js") ? Url("angular.min.js") : Url("angular.js");
-            }
-        
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class Growl {
-                private const string URLPATH = "~/Scripts/Libs/Growl";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string angular_growl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular-growl.min.js") ? Url("angular-growl.min.js") : Url("angular-growl.js");
-            }
-        
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class ui_bootstrap {
-                private const string URLPATH = "~/Scripts/Libs/ui-bootstrap";
+            public static class typings {
+                private const string URLPATH = "~/Scripts/Libs/typings";
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                public static class template {
-                    private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template";
+                public static class angular2 {
+                    private const string URLPATH = "~/Scripts/Libs/typings/angular2";
                     public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                     public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class accordion {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/accordion";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string accordion_group_html = Url("accordion-group.html");
-                        public static readonly string accordion_html = Url("accordion.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class alert {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/alert";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string alert_html = Url("alert.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class carousel {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/carousel";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string carousel_html = Url("carousel.html");
-                        public static readonly string slide_html = Url("slide.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class datepicker {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/datepicker";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string datepicker_html = Url("datepicker.html");
-                        public static readonly string day_html = Url("day.html");
-                        public static readonly string month_html = Url("month.html");
-                        public static readonly string popup_html = Url("popup.html");
-                        public static readonly string year_html = Url("year.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class modal {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/modal";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string backdrop_html = Url("backdrop.html");
-                        public static readonly string window_html = Url("window.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class pagination {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/pagination";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string pager_html = Url("pager.html");
-                        public static readonly string pagination_html = Url("pagination.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class popover {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/popover";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string popover_html = Url("popover.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class progressbar {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/progressbar";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string bar_html = Url("bar.html");
-                        public static readonly string progress_html = Url("progress.html");
-                        public static readonly string progressbar_html = Url("progressbar.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class rating {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/rating";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string rating_html = Url("rating.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class tabs {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/tabs";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string tab_html = Url("tab.html");
-                        public static readonly string tabset_html = Url("tabset.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class timepicker {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/timepicker";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string timepicker_html = Url("timepicker.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class tooltip {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/tooltip";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string tooltip_html_unsafe_popup_html = Url("tooltip-html-unsafe-popup.html");
-                        public static readonly string tooltip_popup_html = Url("tooltip-popup.html");
-                    }
-                
-                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                    public static class typeahead {
-                        private const string URLPATH = "~/Scripts/Libs/ui-bootstrap/template/typeahead";
-                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                        public static readonly string typeahead_match_html = Url("typeahead-match.html");
-                        public static readonly string typeahead_popup_html = Url("typeahead-popup.html");
-                    }
-                
+                    public static readonly string angular2_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular2.d.min.js") ? Url("angular2.d.min.js") : Url("angular2.d.js");
                 }
             
-                public static readonly string ui_bootstrap_0_11_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ui-bootstrap-0.11.0.min.js") ? Url("ui-bootstrap-0.11.0.min.js") : Url("ui-bootstrap-0.11.0.js");
-                public static readonly string ui_bootstrap_tpls_0_11_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ui-bootstrap-tpls-0.11.0.min.js") ? Url("ui-bootstrap-tpls-0.11.0.min.js") : Url("ui-bootstrap-tpls-0.11.0.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class es6_promise {
+                    private const string URLPATH = "~/Scripts/Libs/typings/es6-promise";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string es6_promise_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es6-promise.d.min.js") ? Url("es6-promise.d.min.js") : Url("es6-promise.d.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class rx {
+                    private const string URLPATH = "~/Scripts/Libs/typings/rx";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string rx_lite_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/rx-lite.d.min.js") ? Url("rx-lite.d.min.js") : Url("rx-lite.d.js");
+                    public static readonly string rx_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/rx.d.min.js") ? Url("rx.d.min.js") : Url("rx.d.js");
+                }
+            
             }
         
         }

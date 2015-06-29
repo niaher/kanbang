@@ -1,0 +1,1 @@
+tsc.cmd --watch -m commonjs -t es5 --emitDecoratorMetadata ./Kanbang.Web/Scripts/App/_App.ts

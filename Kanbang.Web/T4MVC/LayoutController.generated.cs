@@ -39,12 +39,10 @@ namespace T4MVC
                 public readonly string _Layout = "_Layout";
                 public readonly string Breadcrumbs = "Breadcrumbs";
                 public readonly string Footer = "Footer";
-                public readonly string Scripts = "Scripts";
             }
             public readonly string _Layout = "~/Views/Layout/_Layout.cshtml";
             public readonly string Breadcrumbs = "~/Views/Layout/Breadcrumbs.cshtml";
             public readonly string Footer = "~/Views/Layout/Footer.cshtml";
-            public readonly string Scripts = "~/Views/Layout/Scripts.cshtml";
         }
     }
 

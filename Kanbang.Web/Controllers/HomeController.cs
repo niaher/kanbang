@@ -11,6 +11,11 @@
 			return this.View();
 		}
 
+		public virtual ActionResult AboutTemplate()
+		{
+			return this.View(MVC.Home.Views.AboutTemplate);
+		}
+
 		[ClaimsPrincipalPermission(SecurityAction.Demand, Operation = "View", Resource = "AdminDashboard")]
 		public virtual ActionResult Admin()
 		{
