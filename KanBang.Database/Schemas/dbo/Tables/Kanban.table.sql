@@ -5,5 +5,5 @@
 	[Description] nvarchar(MAX) NULL,	
 	[ProjectId] int NOT NULL,
 	[CreatedOn] datetime NOT NULL,
-	[CreatedBy] int null
+	[CreatedByUserId] int NOT null
 )

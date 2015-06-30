@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="c0f44850-4921-41a0-b06b-7981f2da413b" ChangeDateTime="06/30/2015 07:42:29">
+    <Property Name="ElementName" Value="[dbo].[Story].[StoryId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Story]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f2273e01-56cd-4319-a3b3-bcf36a18f5e0" ChangeDateTime="06/30/2015 07:42:35">
+    <Property Name="ElementName" Value="[dbo].[Story].[StoryName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Story]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d6dec6ba-1010-464f-8586-297f48b1319e" ChangeDateTime="06/30/2015 07:42:51">
+    <Property Name="ElementName" Value="[dbo].[Story].[TakenById]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Story]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TakenByUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b0145eda-404e-4c96-8099-f62e9ba20fc1" ChangeDateTime="06/30/2015 07:44:50">
+    <Property Name="ElementName" Value="[dbo].[KanbanColumn].[ColumnId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[KanbanColumn]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="733f46aa-45ba-40ea-b770-5d944f7897d7" ChangeDateTime="06/30/2015 07:44:53">
+    <Property Name="ElementName" Value="[dbo].[KanbanColumn].[ColumnName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[KanbanColumn]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5ce07e35-46f8-4eb8-b247-abcacf2270e3" ChangeDateTime="06/30/2015 07:45:17">
+    <Property Name="ElementName" Value="[dbo].[KanbanColumn].[ColumnOrder]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[KanbanColumn]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OrderIndex" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="587da39f-56f5-4beb-8d1c-216f9db138b3" ChangeDateTime="06/30/2015 07:46:02">
+    <Property Name="ElementName" Value="[dbo].[KanbanColumn].[WIPLimit]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[KanbanColumn]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="WipLimit" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a16b8e70-8daa-44ab-bcbb-9478de3aad49" ChangeDateTime="06/30/2015 07:47:16">
+    <Property Name="ElementName" Value="[dbo].[Kanban].[CreatedBy]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Kanban]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreatedByUserId" />
+  </Operation>
+</Operations>

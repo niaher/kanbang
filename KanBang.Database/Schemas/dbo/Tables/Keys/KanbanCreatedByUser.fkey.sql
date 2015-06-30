@@ -1,4 +1,4 @@
 ﻿ALTER TABLE [dbo].[Kanban]
 	ADD CONSTRAINT [KanbanCreatedByUser] 
-	FOREIGN KEY ([CreatedBy])
+	FOREIGN KEY ([CreatedByUserId])
 	REFERENCES [User] ([Id])	

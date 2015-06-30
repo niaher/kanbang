@@ -386,10 +386,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\Libs\typings\angular2\angular2.d.ts" />
-    <TypeScriptCompile Include="Scripts\Libs\typings\es6-promise\es6-promise.d.ts" />
-    <TypeScriptCompile Include="Scripts\Libs\typings\rx\rx-lite.d.ts" />
-    <TypeScriptCompile Include="Scripts\Libs\typings\rx\rx.d.ts" />
+    <None Include="Scripts\Libs\typings\angular2\angular2.d.ts" />
+    <None Include="Scripts\Libs\typings\es6-promise\es6-promise.d.ts" />
+    <None Include="Scripts\Libs\typings\rx\rx-lite.d.ts" />
+    <None Include="Scripts\Libs\typings\rx\rx.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
