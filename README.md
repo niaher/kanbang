@@ -1,13 +1,22 @@
-# Kanbang
+﻿# Kanbang
 
 This project is a work in progress.
 
 ## Developer guidance
+This project is separated into 2 parts:
 
-### Typescript setup
+* Web API - powered by ASP.NET MVC Web API
+* Client app - angular2 app.
 
-* Install [TypeScript 1.5](https://visualstudiogallery.msdn.microsoft.com/107f89a0-a542-4264-b0a9-eb91037cf7af).
-* Look into *C:\Program Files (x86)\Microsoft SDKs\TypeScript* and make sure it only has 1 folder - *1.5*. In case there are other folders make sure to remove them all, but *1.5*.
+### Folder structure
+Kanbang/
+├──Kangbang.Core				* business logic layer
+├──Kangbang.Database			* database project to generate schema
+└──Kangbang.Web					* web api project and client app projects
+   ├──Client					* client app. this is a clone of [angular2-webpack-starter](https://github.com/angular-class/angular2-webpack-starter). This folder should not be included in the Visual Studio solution.
+   └──Index.html				* entry point to the client app.
 
-### How to compile TypeScript files
-Simply run *$(SolutionDir)/tsc-watch.bat*. This will start TypeScript compiler and will watch your typescript files for changes. When changes are detected the TypeScript files will be auto-recompiled.
+### How to build and run client app
+* Install [nodejs](https://nodejs.org/)
+* Run *$(SolutionDir)/tsc-watch.bat*. This will start TypeScript compiler and will watch your typescript files for changes. When changes are detected the TypeScript files will be auto-recompiled.
+* Run *Kanbang.Web* project. The homepage will show the client app.

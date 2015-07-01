@@ -10,7 +10,6 @@ namespace Kanbang.Web
 	using System.Linq;
 	using System.Web.Http;
 	using System.Web.Mvc;
-	using Kanbang.Core.Managers;
 	using Microsoft.Practices.Unity;
 	using Microsoft.Practices.Unity.Mvc;
 	using Microsoft.Web.Infrastructure.DynamicModuleHelper;

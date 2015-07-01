@@ -9,9 +9,6 @@
 	using System.Web.Http;
 	using System.Web.Mvc;
 	using System.Web.Optimization;
-	using System.Web.Routing;
-	using Kanbang.Web.Controllers;
-	using Kanbang.Web.Logic;
 
 	public class Global : HttpApplication
 	{
@@ -21,36 +18,10 @@
 
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
-			MvcConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-			MvcConfig.RegisterRoutes(RouteTable.Routes);
-
-			ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory());
 
 			SetupCulture();
 
 			AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
-		}
-
-		protected void Application_Error(object sender, EventArgs e)
-		{
-			this.HandleHttp404<ErrorController>(MVC.Error.Name, MVC.Error.ActionNames.NotFound);
-		}
-
-		private void HandleHttp404<TErrorController>(string controller, string action)
-			where TErrorController : class, IController, new()
-		{
-			Exception exception = this.Server.GetLastError();
-			HttpException httpException = exception as HttpException;
-			if (httpException != null && httpException.GetHttpCode() == 404)
-			{
-				RouteData routeData = new RouteData();
-				routeData.Values.Add("controller", controller);
-				routeData.Values.Add("action", action);
-				this.Server.ClearError();
-				this.Response.Clear();
-				IController errorController = new TErrorController();
-				errorController.Execute(new RequestContext(new HttpContextWrapper(this.Context), routeData));
-			}
 		}
 
 		private static void SetupCulture()

@@ -25,10 +25,6 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
-    public static Kanbang.Web.Controllers.ErrorController Error = new Kanbang.Web.Controllers.T4MVC_ErrorController();
-    public static Kanbang.Web.Controllers.HomeController Home = new Kanbang.Web.Controllers.T4MVC_HomeController();
-    public static Kanbang.Web.Controllers.UserController User = new Kanbang.Web.Controllers.T4MVC_UserController();
-    public static T4MVC.LayoutController Layout = new T4MVC.LayoutController();
 }
 
 namespace T4MVC
@@ -45,80 +41,11 @@ namespace T4MVC
     }
 }
 
-[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
-{
-    public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
-    {
-        this.InitMVCT4Result(area, controller, action, protocol);
-    }
-     
-    public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
-    
-    public string Controller { get; set; }
-    public string Action { get; set; }
-    public string Protocol { get; set; }
-    public RouteValueDictionary RouteValueDictionary { get; set; }
-}
 
 
 
 namespace Links
 {
-    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public static class Scripts {
-        private const string URLPATH = "~/Scripts";
-        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class App {
-            private const string URLPATH = "~/Scripts/App";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string _App_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_App.min.js") ? Url("_App.min.js") : Url("_App.js");
-        }
-    
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Libs {
-            private const string URLPATH = "~/Scripts/Libs";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class typings {
-                private const string URLPATH = "~/Scripts/Libs/typings";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                public static class angular2 {
-                    private const string URLPATH = "~/Scripts/Libs/typings/angular2";
-                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                    public static readonly string angular2_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/angular2.d.min.js") ? Url("angular2.d.min.js") : Url("angular2.d.js");
-                }
-            
-                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                public static class es6_promise {
-                    private const string URLPATH = "~/Scripts/Libs/typings/es6-promise";
-                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                    public static readonly string es6_promise_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es6-promise.d.min.js") ? Url("es6-promise.d.min.js") : Url("es6-promise.d.js");
-                }
-            
-                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-                public static class rx {
-                    private const string URLPATH = "~/Scripts/Libs/typings/rx";
-                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                    public static readonly string rx_lite_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/rx-lite.d.min.js") ? Url("rx-lite.d.min.js") : Url("rx-lite.d.js");
-                    public static readonly string rx_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/rx.d.min.js") ? Url("rx.d.min.js") : Url("rx.d.js");
-                }
-            
-            }
-        
-        }
-    
-    }
-
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public static class Styles {
         private const string URLPATH = "~/Styles";
