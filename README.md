@@ -13,7 +13,7 @@ Kanbang/
 ├──Kangbang.Core				* business logic layer
 ├──Kangbang.Database			* database project to generate schema
 └──Kangbang.Web					* web api project and client app projects
-   ├──Client					* client app. this is a clone of [angular2-webpack-starter](https://github.com/angular-class/angular2-webpack-starter). This folder should not be included in the Visual Studio solution.
+   ├──Client					* client app. this is a clone of [angular2-webpack-starter](https://github.com/angular-class/angular2-webpack-starter).
    └──Index.html				* entry point to the client app.
 
 ### How to build and run client app
