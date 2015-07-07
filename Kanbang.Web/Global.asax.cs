@@ -18,8 +18,8 @@
 			AreaRegistration.RegisterAllAreas();
 
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-			RouteTable.Routes.MapPageRoute("app", "{*catchall}", "~/Default.aspx");
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
+			RouteTable.Routes.MapPageRoute("app", "{*catchall}", "~/Default.aspx");
 			
 			SetupCulture();
 
