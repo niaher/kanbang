@@ -194,7 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.png" />
-    <Content Include="Index.html" />
     <Content Include="packages.config" />
     <Content Include="Styles\Bootstrap\less\theme.less" />
     <Content Include="Styles\Images\logo.png" />

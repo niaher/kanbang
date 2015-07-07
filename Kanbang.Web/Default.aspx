@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Kanbang.Web.Default" %>
+
+<!DOCTYPE html>
 <html lang="">
 <head>
 	<title>Kanbang</title>
