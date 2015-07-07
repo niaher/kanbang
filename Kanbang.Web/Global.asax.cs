@@ -9,6 +9,7 @@
 	using System.Web.Http;
 	using System.Web.Mvc;
 	using System.Web.Optimization;
+	using System.Web.Routing;
 
 	public class Global : HttpApplication
 	{
@@ -17,8 +18,9 @@
 			AreaRegistration.RegisterAllAreas();
 
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
+			RouteTable.Routes.MapPageRoute("app", "{*catchall}", "~/Default.aspx");
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
-
+			
 			SetupCulture();
 
 			AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.NameIdentifier;
